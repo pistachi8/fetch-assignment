@@ -1,8 +1,8 @@
-CREATE TABLE users_raw (
+CREATE TABLE brands_raw (
     id SERIAL PRIMARY KEY,
     data JSONB
 );
 
 /* psql command to load data from json file
-\copy users(data) FROM '/Users/helenali/Desktop/users.json'
+\copy brands_raw(data) FROM '/Users/helenali/Desktop/brands.json'
 */

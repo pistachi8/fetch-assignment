@@ -35,7 +35,10 @@ def extract_columns_from_jsonl(input_file):
     columns = set()
     with open(input_file, 'r') as infile:
         for line in infile:
-            json_object = json.loads(line.strip())
+            try:
+                json_object = json.loads(line.strip())
+            except json.JSONDecodeError as e:
+                print(line.strip())
             
             # Extract the column names from the JSON object and deduplicate using a set
             columns.update(extract_keys(json_object))
@@ -47,5 +50,3 @@ def extract_columns_from_jsonl(input_file):
 columns = extract_columns_from_jsonl('/Users/helenali/Desktop/fetch-assignment/data/brands.json')
 for col in sorted(columns):
     print(col)
-
-

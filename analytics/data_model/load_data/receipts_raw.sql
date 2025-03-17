@@ -4,5 +4,5 @@ CREATE TABLE receipts_raw (
 );
 
 /* psql command to load data from json file
-\copy receipts(data) FROM '/Users/helenali/Desktop/receipts.json'
+\copy receipts_raw(data) FROM '/Users/helenali/Desktop/receipts.json'
 */
