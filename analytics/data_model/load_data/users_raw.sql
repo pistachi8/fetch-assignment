@@ -4,5 +4,5 @@ CREATE TABLE users_raw (
 );
 
 /* psql command to load data from json file
-\copy users_raw(data) FROM '/Users/helenali/Desktop/users.json'
+\copy users_raw(data) FROM 'source_data/users.json'
 */

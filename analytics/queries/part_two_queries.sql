@@ -59,12 +59,12 @@ FROM prev_top_five_brands
 --------------
 Receipt Status
 --------------
-Here we assume that a receipt with status of "Finished" has been rejected -- otherwise the status would be
+Here we assume that a receipt with status of "Finished" has been accepted -- otherwise the status would be
 "Pending" if still being processed, "Rejected" if rejected, or "Flagged" if further review is needed.
 
 There appeared to be some data quality issues here as well which may have some affect on the final answer.
-Total spent on the receipt did not always match up with the sum of the final price of items on the receipt.
-Similarly, purchased item count on the receipt did not always match up with the sum of items * purchase quantity of each item on the receipt.
+Total spent on the receipt did not always match up with the sum of the final price * purchase quantity of items on the receipt.
+Similarly, purchased item count on the receipt did not always match up with the sum of purchase quantity of all items on the receipt.
 For simplicity, we went with the receipt level totals and item quantity.
 */
 
@@ -89,9 +89,8 @@ GROUP BY 1;
 Brand Data Based On User Creation Date
 --------------------------------------
 There were additional data quality issues that we came across when running analysis on users.
-There were duplicates in the source data provided which we were able to deduplicate.
-However, there are receipts associated with user id's that we don't have information for.
-The users.json file we received is likely incomplete.
+There were duplicates in the source data provided which I was able to deduplicate at the staging level.
+However, there are receipts associated with user id's that we don't have information for, meaning that users.json file is likely incomplete.
 
 Since there were no users created in the last 6 months, the answers to both questions posed below will be none.
 If we wanted to know which brand has the most spend or number of transactions among users over all time, we can

@@ -17,7 +17,7 @@ WHERE brand_id IS null
 OR count > 1;
 
 -- For each item barcode that exists in stg_receipt_items, there should exist a corresponding record in the stg_brands table containing brand information for that item.
--- The result of the query below gives us the item barcodes that should be in the brands.json file but are missing.
+-- The result of the query below gives us the item barcodes that are missing from the brands.json file.
 SELECT DISTINCT
     barcode
 FROM stg_receipt_items

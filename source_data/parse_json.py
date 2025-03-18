@@ -45,6 +45,7 @@ def extract_columns_from_jsonl(input_file):
 
     return columns
 
+#NOTE: May need to edit escaped characters in the source file for the below to run properly (i.e.: from \\ to \)
 #columns = extract_columns_from_jsonl('/Users/helenali/Desktop/fetch-assignment/data/receipts.json')
 #columns = extract_columns_from_jsonl('/Users/helenali/Desktop/fetch-assignment/data/users.json')
 columns = extract_columns_from_jsonl('/Users/helenali/Desktop/fetch-assignment/data/brands.json')

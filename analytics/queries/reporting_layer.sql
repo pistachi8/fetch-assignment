@@ -1,5 +1,3 @@
-DROP TABLE IF EXISTS reporting_layer;
-
 -- In this table, I gathered and calculated all fields necessary to answer all 5 questions posed in the second part of the exercise
 CREATE TABLE reporting_layer AS
 WITH receipt_item_brand_user AS (

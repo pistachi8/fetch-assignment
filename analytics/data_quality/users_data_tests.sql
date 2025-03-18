@@ -18,7 +18,7 @@ WHERE user_id IS null
 OR count > 1;
 
 -- For each user_id associated with a receipt in stg_receipts, there should exist the same user_id in the stg_users table.
--- The result of the query below gives us the user_ids that should be in the users.json file but are missing.
+-- The result of the query below gives us the user_ids that are missing from the users.json file.
 SELECT
     user_id
 FROM stg_receipts
